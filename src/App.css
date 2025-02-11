@@ -1,0 +1,240 @@
+.Home-cardLogin {
+  max-width: 450px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #C1D72F;
+  text-align: center;
+}
+
+.Home-cardLogin h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Home-textField {
+  margin-bottom: 15px;
+}
+
+.Home-textField label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.Home-textField input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.Home-btnLogin {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Home-btnLogin:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+nav {
+  background-color: white;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-shadow: 1px 6px 18px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 6px 18px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 6px 18px 0px rgba(0,0,0,0.75);
+  }
+
+
+.nav-logo{
+height: 100px;
+width: 500px;
+}
+
+.nav-imgIcono{
+background-color: #e6e6e6;
+height: 100px;
+width: 250px;
+}
+
+.nav-botonesNavbar{
+display: flex;
+gap: 30px;
+justify-content: center;
+align-items: center;
+}
+
+.nav-btnFavorite,
+.nav-btnContacts,
+.nav-btnOverview {
+  padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btnFavorite:active,
+.btnContacts:active,
+.btnOverview:active {
+  background-color: #C1D72F; 
+}
+
+.nav-btnNew {
+    background-color: #C1D72F;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 10px 8px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 10px 8px -6px rgba(0,0,0,0.75);
+    box-shadow: -1px 10px 8px -6px rgba(0,0,0,0.75);
+}
+
+.header-containerGeneral{
+display: flex;
+align-items: center;
+
+}
+
+.header-lineaVerde{
+background-color:  #C1D72F;
+height: 2px;
+width: 780px;
+margin-left: 30px;
+margin-top: 5px;
+}
+
+.cardListContainer{
+  display: flex;
+  column-gap: 4px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  width: 200px;
+  
+}
+
+.card-container h2 {
+margin-bottom: 1px; 
+}
+
+.card-container img{
+border-radius: 50px;
+margin-top: 10px;
+}
+
+.card-img-favorite {
+  border: 4px solid #C1D72F;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.card-btnEliminar{
+padding: 10px;
+border:  1px solid;
+border-radius: 10px;
+color: red;
+cursor: pointer;
+margin-bottom: 10px;
+}
+
+.card-iconosContainer {
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: px;
+}
+
+.card-iconoCorazon{
+    color: #C1D72F;
+    padding: 2px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.card-iconoEliminar{
+  color: red;
+  padding: 2px;
+  border: 1px solid;
+  cursor: pointer;
+  margin-left: 10px; 
+}
+
+/* Formulario */
+
+.formulario {
+  width: 400px;
+  margin: 10px auto;
+  padding: 30px;
+  background-color: #C1D72F;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="checkbox"],
+input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #C1D72F;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #fafcfa;
+}
+
