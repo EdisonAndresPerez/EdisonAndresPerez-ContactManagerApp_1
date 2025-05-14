@@ -1,48 +1,51 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import './App.css';
-import { Favorites } from './componentes/Favorites.jsx';
-import {Contacts} from './componentes/Contacts'
-import App from './App.jsx';
-import { Overview } from './componentes/Overview.jsx';
-import store from './redux/Store.jsx';
-import { Provider} from 'react-redux';
-import Home from './componentes/Home.jsx';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import { Favorites } from "./componentes/Favorites.jsx";
+import { Contacts } from "./componentes/Contacts";
+import App from "./App.jsx";
+import { Overview } from "./componentes/Overview.jsx";
+import store from "./redux/Store.jsx";
+import { Provider } from "react-redux";
+import Home from "./componentes/Home.jsx";
 
+function Root() {
+  const [user, setUser] = useState(null); // Estado global para el usuario
 
-
-
-const router = createBrowserRouter([
-  {
-    path:'/',
-    element:<Home/>,
-  },
-{
-  path:'home',
-  element:<App/>,
-  children:[
+  const router = createBrowserRouter([
     {
-      path:'',
-      element:<Overview/>
+      path: "/",
+      element: <Home setUser={setUser} />, // Pasa setUser como prop
     },
     {
-      path:'favorites',
-      element:<Favorites/>
+      path: "/home",
+      element: <App />,
+      children: [
+        {
+          path: "",
+          element: <Overview />,
+        },
+        {
+          path: "favorites",
+          element: <Favorites />,
+        },
+        {
+          path: "contacts",
+          element: <Contacts />,
+        },
+      ],
     },
-    {
-      path:'contacts',
-      element:<Contacts/>
-    },
-  ]
-},
-])
+  ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+  return <RouterProvider router={router} />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <RouterProvider router={router} />
+      <Root />
     </Provider>
   </React.StrictMode>
 );

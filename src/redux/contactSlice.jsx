@@ -141,6 +141,7 @@ const contactSlice = createSlice({
 
   reducers: {
     addContact: (state, action) => {
+      console.log("Nuevo contacto agregado:", action.payload);
       state.contacts.push(action.payload);
     },
 

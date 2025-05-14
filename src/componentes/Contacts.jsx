@@ -24,7 +24,7 @@ export function Contacts() {
   const contactsList = contacts.filter(contact => contact.isDeleted === false);
 
   return (
-    <div>
+    <>
       {/* Componente de encabezado */}
       <Header2 /> 
 
@@ -40,6 +40,6 @@ export function Contacts() {
           <Cards key={index} user={contact} />
         ))}
       </div>
-    </div>
+    </>
   );
 }

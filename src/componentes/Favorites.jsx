@@ -24,7 +24,7 @@ export function Favorites() {
   const favorites = contacts.filter(contact => contact.isFavorite && !contact.isDeleted);
 
   return (
-    <div>
+    <>
       {/* 📌 Renderizamos el encabezado del componente */}
       <Header />
       
@@ -34,6 +34,6 @@ export function Favorites() {
           return <Cards key={i} user={contact} />;
         })}
       </div>
-    </div>
+    </>
   );
 }
