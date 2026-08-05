@@ -404,17 +404,17 @@ label {
   align-items: center;
   gap: 20px;
   font-size: 2rem;
-  color: #4f46e5;
+  color: var(--login-green);
   font-weight: 700;
   margin-right: 20px;
 }
 .header-lineaVerde {
-  background-color: #a5b4fc;
+  background:var(--login-green);
   height: 4px;
   width: 100%;
   max-width: 600px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border-radius: 2px;
+
 }
 
 /* Cards */
@@ -444,17 +444,17 @@ label {
 }
 .card-container:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 10px 20px var(--login-green);
 }
 .card-container h2 {
   margin: 10px 0 4px;
   font-size: 1.2rem;
-  color: #4f46e5;
+  color: var(--login-text);
   text-align: center;
 }
 .card-container p {
   font-size: 0.9rem;
-  color: #333;
+  color: black;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -463,7 +463,7 @@ label {
   margin-top: 10px;
 }
 .card-img-favorite {
-  border: 4px solid #4f46e5;
+  border: 4px solid var(--login-green);
   border-radius: 50px;
   margin-top: 10px;
 }
@@ -488,7 +488,7 @@ label {
   margin-right: 20px;
 }
 .card-iconoCorazon {
-  color: #4f46e5;
+  color: var(--login-green-dark);
   padding: 6px;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -499,7 +499,7 @@ label {
     background-color 0.3s ease;
 }
 .card-iconoCorazon:hover {
-  background-color: #c7d2fe;
+  background-color: var(--login-green-muted);
   transform: scale(1.1);
 }
 .card-iconoEliminar {

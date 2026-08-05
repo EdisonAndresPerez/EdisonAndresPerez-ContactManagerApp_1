@@ -59,7 +59,7 @@ export function Nav() {
                   className="nav-btnNew-icon"
                   aria-hidden="true"
                 />
-                Crear Nuevo Contacto
+                New Contact
               </span>
             </button>
           </li>
