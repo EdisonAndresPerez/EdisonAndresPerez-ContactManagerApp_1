@@ -24,9 +24,9 @@
   padding: 24px 16px;
   background: linear-gradient(
     160deg,
-    var(--login-green-light) 0%,
-    var(--login-green) 45%,
-    var(--login-green-dark) 100%
+    var(--login-green-muted) 0%,
+    var(--login-green-light) 55%,
+    var(--login-green-dark) 50%
   );
 }
 
