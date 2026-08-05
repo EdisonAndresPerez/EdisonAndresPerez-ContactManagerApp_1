@@ -149,22 +149,38 @@
   }
 
   .home_login_form_panel {
-    order: 1;
-    padding: 40px 24px 48px;
+    min-height: 100vh;
+    padding: 32px 20px;
   }
 
   .home_login_image_panel {
-    order: 0;
-    min-height: 240px;
-    max-height: 320px;
+    display: none;
   }
 
-  .home_login_image_overlay {
-    padding: 24px;
+  .home_formulario_login {
+    max-width: 420px;
+    padding: 32px 24px 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .home_login_form_panel {
+    align-items: center;
+    padding: 24px 16px;
   }
 
-  .home_login_image_text {
-    font-size: 1.35rem;
+  .home_formulario_login {
+    margin-top: 0;
+    padding: 28px 20px 24px;
+    border-radius: 16px;
+  }
+
+  .home_login_header {
+    margin-bottom: 24px;
+  }
+
+  .home_title {
+    font-size: 1.6rem;
   }
 }
 

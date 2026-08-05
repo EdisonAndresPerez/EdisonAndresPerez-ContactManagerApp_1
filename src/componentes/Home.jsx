@@ -28,11 +28,15 @@ function Home() {
     navigate("/home");
   };
 
-  const handleInputChange = (setter) => (event) => {
-    setter(event.target.value);
+  function handleInputChange(setter) {
+    return function (event) {
+      setter(event.target.value);
 
-    if (error) setError(false);
-  };
+      if (error) {
+        setError(false);
+      }
+    };
+  }
 
   return (
     <div className="home_login_page">
