@@ -18,6 +18,18 @@
 
 .home_login_page {
   min-height: 100vh;
+  background: var(--login-white);
+  overflow: hidden;
+}
+
+.home_login_layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home_login_form_panel {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +40,35 @@
     var(--login-green-light) 55%,
     var(--login-green-dark) 50%
   );
+  background-size: 160% 160%;
+  animation: homeGradientShift 14s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.home_login_form_panel::before,
+.home_login_form_panel::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.home_login_form_panel::before {
+  width: 320px;
+  height: 320px;
+  top: -130px;
+  left: -100px;
+  animation: homeFloat 9s ease-in-out infinite;
+}
+
+.home_login_form_panel::after {
+  width: 230px;
+  height: 230px;
+  right: -80px;
+  bottom: -100px;
+  animation: homeFloat 11s ease-in-out -4s infinite reverse;
 }
 
 .home_formulario_login {
@@ -39,29 +80,92 @@
   box-shadow:
     0 20px 50px var(--login-shadow),
     0 0 0 1px rgba(255, 255, 255, 0.6) inset;
-  animation: fadeIn 0.6s ease-out;
+  animation: homeCardEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
 .home_formulario_login::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
+  width: 180px;
+  height: 180px;
+  top: -120px;
+  right: -90px;
+  border-radius: 50%;
+  background: var(--login-green-muted);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.home_login_image_panel {
+  position: relative;
+
+  overflow: hidden;
+  background: var(--login-green-dark);
+}
+
+.home_login_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  animation: homeImageBreath 12s ease-in-out infinite alternate;
+}
+
+.home_login_image_overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
   background: linear-gradient(
-    90deg,
-    var(--login-green-dark),
-    var(--login-green),
-    var(--login-green-light)
+    180deg,
+    rgba(61, 74, 18, 0.05) 0%,
+    rgba(61, 74, 18, 0.55) 100%
   );
 }
 
+.home_login_image_text {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--login-white);
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  animation: homeTextEnter 0.8s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .home_login_header {
-  text-align: center;
-  margin-bottom: 28px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .home_login_layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home_login_form_panel {
+    order: 1;
+    padding: 40px 24px 48px;
+  }
+
+  .home_login_image_panel {
+    order: 0;
+    min-height: 240px;
+    max-height: 320px;
+  }
+
+  .home_login_image_overlay {
+    padding: 24px;
+  }
+
+  .home_login_image_text {
+    font-size: 1.35rem;
+  }
 }
 
 .home_title {
@@ -178,16 +282,34 @@
   font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.15s ease;
 }
 
+.home_form_submit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.35) 50%, transparent 75%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.home_form_submit_label {
+  position: relative;
+  z-index: 1;
+}
+
 .home_form_submit:hover {
   background-color: var(--login-green-dark);
   box-shadow: 0 8px 20px var(--login-shadow);
 }
+
+.home_form_submit:hover::before { transform: translateX(120%); }
 
 .home_form_submit:active {
   transform: translateY(1px);
@@ -202,6 +324,53 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes homeGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes homeFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(24px, 18px, 0); }
+}
+
+@keyframes homeCardEnter {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes homeContentEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes homeImageBreath {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+@keyframes homeTextEnter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home_login_form_panel,
+  .home_login_form_panel::before,
+  .home_login_form_panel::after,
+  .home_formulario_login,
+  .home_login_header,
+  .home_form_group,
+  .home_login_image,
+  .home_login_image_text,
+  .home_error { animation: none; }
+
+  .home_form_submit,
+  .home_form_submit::before,
+  .home_formulario_login .home_form_input,
+  .home_link { transition: none; }
 }
 
 body {
@@ -462,3 +631,16 @@ margin-top: 10px;
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.home_login_header,
+.home_form_group,
+.home_form_submit,
+.home_error {
+  position: relative;
+  z-index: 1;
+}
+
+.home_login_header { animation: homeContentEnter 0.55s 0.18s ease-out both; }
+.home_form_group { animation: homeContentEnter 0.5s ease-out both; }
+.home_form_group:nth-child(1) { animation-delay: 0.28s; }
+.home_form_group:nth-child(2) { animation-delay: 0.38s; }
