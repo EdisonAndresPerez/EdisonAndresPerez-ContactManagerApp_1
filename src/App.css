@@ -1,7 +1,4 @@
-
-
-
-/* Login — paleta 60-30-10: blanco dominante, verde secundario, verde oscuro en CTA */
+/* Login — paleta 60-30-10 */
 :root {
   --login-green: #bfd52e;
   --login-green-light: #d4e157;
@@ -21,14 +18,12 @@
   background: var(--login-white);
   overflow: hidden;
 }
-
 .home_login_layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
   width: 100%;
 }
-
 .home_login_form_panel {
   display: flex;
   align-items: center;
@@ -45,7 +40,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .home_login_form_panel::before,
 .home_login_form_panel::after {
   content: "";
@@ -54,7 +48,6 @@
   background: rgba(255, 255, 255, 0.22);
   pointer-events: none;
 }
-
 .home_login_form_panel::before {
   width: 320px;
   height: 320px;
@@ -62,7 +55,6 @@
   left: -100px;
   animation: homeFloat 9s ease-in-out infinite;
 }
-
 .home_login_form_panel::after {
   width: 230px;
   height: 230px;
@@ -70,7 +62,6 @@
   bottom: -100px;
   animation: homeFloat 11s ease-in-out -4s infinite reverse;
 }
-
 .home_formulario_login {
   width: 100%;
   max-width: 420px;
@@ -85,7 +76,6 @@
   z-index: 1;
   overflow: hidden;
 }
-
 .home_formulario_login::before {
   content: "";
   position: absolute;
@@ -98,14 +88,11 @@
   opacity: 0.7;
   pointer-events: none;
 }
-
 .home_login_image_panel {
   position: relative;
-
   overflow: hidden;
   background: var(--login-green-dark);
 }
-
 .home_login_image {
   width: 100%;
   height: 100%;
@@ -114,7 +101,6 @@
   display: block;
   animation: homeImageBreath 12s ease-in-out infinite alternate;
 }
-
 .home_login_image_overlay {
   position: absolute;
   inset: 0;
@@ -127,7 +113,6 @@
     rgba(61, 74, 18, 0.55) 100%
   );
 }
-
 .home_login_image_text {
   margin: 0;
   font-size: 1.75rem;
@@ -137,53 +122,10 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
   animation: homeTextEnter 0.8s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-
 .home_login_header {
   text-align: left;
   margin-bottom: 32px;
 }
-
-@media (max-width: 900px) {
-  .home_login_layout {
-    grid-template-columns: 1fr;
-  }
-
-  .home_login_form_panel {
-    min-height: 100vh;
-    padding: 32px 20px;
-  }
-
-  .home_login_image_panel {
-    display: none;
-  }
-
-  .home_formulario_login {
-    max-width: 420px;
-    padding: 32px 24px 28px;
-  }
-}
-
-@media (max-width: 420px) {
-  .home_login_form_panel {
-    align-items: center;
-    padding: 24px 16px;
-  }
-
-  .home_formulario_login {
-    margin-top: 0;
-    padding: 28px 20px 24px;
-    border-radius: 16px;
-  }
-
-  .home_login_header {
-    margin-bottom: 24px;
-  }
-
-  .home_title {
-    font-size: 1.6rem;
-  }
-}
-
 .home_title {
   font-size: 1.85rem;
   font-weight: 700;
@@ -191,51 +133,43 @@
   margin: 0 0 8px;
   letter-spacing: -0.02em;
 }
-
 .home_subtitle {
   margin: 0;
   font-size: 0.95rem;
   color: var(--login-text-soft);
   line-height: 1.5;
 }
-
 .home_paragraph {
   font-size: 0.9rem;
   color: var(--login-text-soft);
   margin-bottom: 20px;
 }
-
 .home_link {
   color: var(--login-green-dark);
   margin-left: 4px;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 .home_link:hover {
   color: var(--login-green);
   text-decoration: underline;
 }
-
 .home_form_container {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .home_form_group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .home_form_label {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--login-text);
   letter-spacing: 0.01em;
 }
-
 .home_formulario_login .home_form_input {
   width: 100%;
   box-sizing: border-box;
@@ -251,30 +185,24 @@
     box-shadow 0.2s ease,
     background-color 0.2s ease;
 }
-
 .home_formulario_login .home_form_input::placeholder {
   color: #a3ad7a;
 }
-
 .home_formulario_login .home_form_input:hover {
   border-color: var(--login-green-light);
 }
-
 .home_formulario_login .home_form_input:focus {
   border-color: var(--login-green);
   box-shadow: 0 0 0 4px rgba(191, 213, 46, 0.25);
   background: var(--login-white);
 }
-
 .home_formulario_login .home_form_input:focus-visible {
   outline: none;
 }
-
 .home_formulario_login .home_form_input[aria-invalid="true"] {
   border-color: var(--login-error-border);
   background: var(--login-error-bg);
 }
-
 .home_error {
   margin: 0;
   padding: 10px 12px;
@@ -286,7 +214,6 @@
   text-align: center;
   animation: fadeIn 0.25s ease-out;
 }
-
 .home_form_submit {
   width: 100%;
   margin-top: 4px;
@@ -305,117 +232,71 @@
     box-shadow 0.2s ease,
     transform 0.15s ease;
 }
-
-.home_form_submit::before {
+.home_form_submit::before,
+.nav-btnNew::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.35) 50%, transparent 75%);
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 75%
+  );
   transform: translateX(-120%);
   transition: transform 0.55s ease;
 }
-
 .home_form_submit_label {
   position: relative;
   z-index: 1;
 }
-
 .home_form_submit:hover {
   background-color: var(--login-green-dark);
   box-shadow: 0 8px 20px var(--login-shadow);
 }
-
-.home_form_submit:hover::before { transform: translateX(120%); }
-
+.home_form_submit:hover::before,
+.nav-btnNew:hover::before {
+  transform: translateX(120%);
+}
 .home_form_submit:active {
   transform: translateY(1px);
   box-shadow: 0 4px 10px var(--login-shadow);
 }
-
 .home_form_submit:focus-visible {
   outline: 3px solid rgba(191, 213, 46, 0.45);
   outline-offset: 2px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes homeGradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes homeFloat {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(24px, 18px, 0); }
-}
-
-@keyframes homeCardEnter {
-  from { opacity: 0; transform: translateY(24px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes homeContentEnter {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes homeImageBreath {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
-}
-
-@keyframes homeTextEnter {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home_login_form_panel,
-  .home_login_form_panel::before,
-  .home_login_form_panel::after,
-  .home_formulario_login,
-  .home_login_header,
-  .home_form_group,
-  .home_login_image,
-  .home_login_image_text,
-  .home_error { animation: none; }
-
-  .home_form_submit,
-  .home_form_submit::before,
-  .home_formulario_login .home_form_input,
-  .home_link { transition: none; }
-}
-
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f6ef;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
   margin: 0;
 }
 
 /* Nav */
-
 nav {
-  background-color: white;
-  color: #4F46E5; 
-  padding: 10px 30px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--login-text);
+  padding: 12px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-
+.nav-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
 .nav-botonesNavbar {
   display: flex;
-  gap: 30px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
+  list-style: none;
+  margin: 0;
 }
-
 .nav-btnFavorite,
 .nav-btnContacts,
 .nav-btnOverview {
@@ -423,50 +304,72 @@ nav {
   text-align: center;
   text-decoration: none;
   font-size: 1rem;
-  color: #4F46E5;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background-color: transparent;
-  transition: all 0.3s ease;
+  color: black;
   font-weight: 500;
 }
-
 .nav-btnFavorite:hover,
 .nav-btnContacts:hover,
-.nav-btnOverview:hover {
-  color: #4338CA;
-  background-color: #f0f0ff;
-  border-color: #4F46E5;
-  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
-}
-
+.nav-btnOverview:hover,
 .nav-btnFavorite:active,
 .nav-btnContacts:active,
 .nav-btnOverview:active {
-  background-color: #EDE9FE;
-  color: #4338CA;
+  color: var(--login-green);
 }
-
+.nav-btnFavorite.active,
+.nav-btnContacts.active,
+.nav-btnOverview.active {
+  color: var(--login-green);
+  border-bottom: 2px solid var(--login-green);
+}
 .nav-btnNew {
-  background-color: #4F46E5;
-  color: white;
+  display: flex;
+  align-items: center;
+  background-color: var(--login-green);
+  color: black;
   padding: 10px 20px;
   font-size: 1rem;
+  font-weight: 500;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: -1px 10px 8px -6px rgba(0, 0, 0, 0.15);
-}  
-
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+.nav-btnNew-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-btnNew-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
 .nav-btnNew:hover {
-  background-color: #4338CA;
-  box-shadow: 0 6px 12px rgba(67, 56, 202, 0.4);
-}  
-
+  background-color: var(--login-green-dark);
+  box-shadow: 0 8px 20px var(--login-text-soft);
+}
+.nav-btnNew:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px var(--login-shadow);
+}
+.nav-btnNew:focus-visible,
+.nav-btnFavorite:focus-visible,
+.nav-btnContacts:focus-visible,
+.nav-btnOverview:focus-visible {
+  outline: 3px solid rgba(191, 213, 46, 0.45);
+  outline-offset: 2px;
+}
 
 /* Formulario */
-
 .formulario {
   width: 400px;
   margin: 20px auto;
@@ -480,46 +383,33 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: center; 
+  align-items: center;
 }
-
 .input-group {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   width: 100%;
 }
-
-
 label {
   margin-bottom: 6px;
   font-size: 1rem;
-  color: #4F46E5;
+  color: #4f46e5;
   font-weight: 500;
 }
 
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/*cabeza  */
-
+/* Cabeza */
 .header-containerTituloLinea {
   display: flex;
   align-items: center;
   gap: 20px;
   font-size: 2rem;
-  color: #4F46E5;
+  color: #4f46e5;
   font-weight: 700;
   margin-right: 20px;
 }
-
 .header-lineaVerde {
-  background-color: #A5B4FC;
+  background-color: #a5b4fc;
   height: 4px;
   width: 100%;
   max-width: 600px;
@@ -527,14 +417,8 @@ label {
   transition: background-color 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
-
-.cardListContainer{
+/* Cards */
+.cardListContainer {
   display: flex;
   column-gap: 4px;
   flex-wrap: wrap;
@@ -542,110 +426,125 @@ label {
   align-content: center;
   justify-content: center;
   align-items: center;
-}  
-
+}
 .card-container {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   background-color: white;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   padding: 20px;
   margin: 10px;
   width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   animation: fadeIn 0.5s ease-in-out;
-  
-}  
-
+}
 .card-container:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
 }
-
 .card-container h2 {
   margin: 10px 0 4px;
   font-size: 1.2rem;
-  color: #4F46E5;
+  color: #4f46e5;
   text-align: center;
 }
-
 .card-container p {
   font-size: 0.9rem;
   color: #333;
   text-align: center;
   margin-bottom: 10px;
 }
-
-
-.card-container img{
-border-radius: 50%;  
-margin-top: 10px;
+.card-container img {
+  border-radius: 50%;
+  margin-top: 10px;
 }
-
 .card-img-favorite {
-  border: 4px solid #4F46E5;
+  border: 4px solid #4f46e5;
   border-radius: 50px;
   margin-top: 10px;
-}  
-
-.card-btnEliminar{
+}
+.card-btnEliminar {
   padding: 10px;
   border: none;
   border-radius: 10px;
   color: white;
-  background-color: #EF4444;
+  background-color: #ef4444;
   cursor: pointer;
   margin-top: 10px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
-
 .card-btnEliminar:hover {
-  background-color: #DC2626;
+  background-color: #dc2626;
   box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
 }
-
-
 .card-iconosContainer {
   display: inline-block;
   margin-right: 20px;
-}  
-
-.card-iconoCorazon{
-  color: #4F46E5;
-    padding: 6px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    border: 1px solid;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}    
-
-.card-iconoCorazon:hover {
-  background-color: #C7D2FE;
-  transform: scale(1.1);
 }
-
-.card-iconoEliminar{
-  color: #EF4444;
+.card-iconoCorazon {
+  color: #4f46e5;
   padding: 6px;
   border-radius: 8px;
   font-size: 1.1rem;
   border: 1px solid;
   cursor: pointer;
-  margin-left: 10px; 
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}  
-
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease;
+}
+.card-iconoCorazon:hover {
+  background-color: #c7d2fe;
+  transform: scale(1.1);
+}
+.card-iconoEliminar {
+  color: #ef4444;
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  border: 1px solid;
+  cursor: pointer;
+  margin-left: 10px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease;
+}
 .card-iconoEliminar:hover {
-  background-color: #FCA5A5;
+  background-color: #fca5a5;
   transform: scale(1.1);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Formulario de contactos: reutiliza los estilos del login */
+.contact_form {
+  width: min(calc(100% - 32px), 420px);
+  margin: 20px auto;
+}
+
+.contact_form_favorite {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact_form_favorite input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--login-green-dark);
+}
+
+.contact_form_favorite label {
+  margin: 0;
+  color: var(--login-text);
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .home_login_header,
@@ -655,8 +554,216 @@ margin-top: 10px;
   position: relative;
   z-index: 1;
 }
+.home_login_header {
+  animation: homeContentEnter 0.55s 0.18s ease-out both;
+}
+.home_form_group {
+  animation: homeContentEnter 0.5s ease-out both;
+}
+.home_form_group:nth-child(1) {
+  animation-delay: 0.28s;
+}
+.home_form_group:nth-child(2) {
+  animation-delay: 0.38s;
+}
 
-.home_login_header { animation: homeContentEnter 0.55s 0.18s ease-out both; }
-.home_form_group { animation: homeContentEnter 0.5s ease-out both; }
-.home_form_group:nth-child(1) { animation-delay: 0.28s; }
-.home_form_group:nth-child(2) { animation-delay: 0.38s; }
+/* Responsive only */
+@media (max-width: 900px) {
+  .home_login_layout {
+    grid-template-columns: 1fr;
+  }
+  .home_login_form_panel {
+    min-height: 100vh;
+    padding: 32px 20px;
+  }
+  .home_login_image_panel {
+    display: none;
+  }
+  .home_formulario_login {
+    max-width: 420px;
+    padding: 32px 24px 28px;
+  }
+  .nav-botonesNavbar {
+    flex-wrap: wrap;
+  }
+  .cardListContainer {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  nav {
+    gap: 12px;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-botonesNavbar {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+  }
+  .formulario {
+    width: calc(100% - 32px);
+  }
+  .header-containerTituloLinea {
+    margin: 24px 16px;
+    font-size: 1.7rem;
+  }
+  .card-container {
+    width: calc(50% - 28px);
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home_login_form_panel {
+    align-items: center;
+    padding: 24px 16px;
+  }
+  .home_formulario_login {
+    margin-top: 0;
+    padding: 28px 20px 24px;
+    border-radius: 16px;
+  }
+  .home_login_header {
+    margin-bottom: 24px;
+  }
+  .home_title {
+    font-size: 1.6rem;
+  }
+  nav {
+    padding: 12px;
+  }
+  .nav-logo {
+    height: 32px;
+  }
+  .nav-botonesNavbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .nav-botonesNavbar li:last-child {
+    grid-column: 1 / -1;
+  }
+  .nav-btnFavorite,
+  .nav-btnContacts,
+  .nav-btnOverview,
+  .nav-btnNew {
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 0.88rem;
+  }
+  .nav-btnNew-label {
+    justify-content: center;
+  }
+  .formulario {
+    width: calc(100% - 24px);
+    padding: 20px;
+  }
+  .header-containerTituloLinea {
+    margin: 20px 12px;
+    gap: 10px;
+    font-size: 1.45rem;
+  }
+  .header-lineaVerde {
+    min-width: 28px;
+  }
+  .cardListContainer {
+    padding: 0 12px;
+  }
+  .card-container {
+    width: 100%;
+    min-width: 0;
+    margin: 6px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home_login_form_panel,
+  .home_login_form_panel::before,
+  .home_login_form_panel::after,
+  .home_formulario_login,
+  .home_login_header,
+  .home_form_group,
+  .home_login_image,
+  .home_login_image_text,
+  .home_error {
+    animation: none;
+  }
+  .home_form_submit,
+  .home_form_submit::before,
+  .nav-btnNew,
+  .nav-btnNew::before,
+  .home_formulario_login .home_form_input,
+  .home_link {
+    transition: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes homeGradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes homeFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(24px, 18px, 0);
+  }
+}
+@keyframes homeCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes homeContentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes homeImageBreath {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+@keyframes homeTextEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

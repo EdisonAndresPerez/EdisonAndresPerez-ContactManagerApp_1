@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../redux/contactSlice";
 
@@ -9,65 +9,82 @@ export function Form({ toggleForm }) {
     last_name: "",
     email: "",
     isFavorite: false,
-    avatar: `https://reqres.in/img/faces/${Math.floor(Math.random() * 12) + 1}-image.jpg`
   });
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    setFormData((previousData) => ({
+      ...previousData,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newContact = {
-      ...formData,
-      id: Date.now(),
-      isDeleted: false, // Asegúrate de incluir esta propiedad
-    };
-    dispatch(addContact(newContact));
-    toggleForm(); // Cierra el formulario
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(
+      addContact({
+        ...formData,
+        id: Date.now(),
+        isDeleted: false,
+      }),
+    );
+    toggleForm();
   };
 
   return (
-    <form onSubmit={handleSubmit} className="formulario">
-      <div className="container">
-        <div className="input-group">
-          <label htmlFor="firstName">Nombre:</label>
+    <form onSubmit={handleSubmit} className="home_formulario_login contact_form">
+      <header className="home_login_header">
+        <h2 className="home_title">Nuevo contacto</h2>
+        <p className="home_subtitle">Completa la información del contacto</p>
+      </header>
+
+      <div className="home_form_container">
+        <div className="home_form_group">
+          <label htmlFor="firstName" className="home_form_label">Nombre</label>
           <input
             type="text"
             id="firstName"
             name="first_name"
+            className="home_form_input"
+            placeholder="Nombre del contacto"
             value={formData.first_name}
             onChange={handleChange}
+            autoComplete="given-name"
             required
           />
         </div>
-        <div className="input-group">
-          <label htmlFor="lastName">Apellido:</label>
+
+        <div className="home_form_group">
+          <label htmlFor="lastName" className="home_form_label">Apellido</label>
           <input
             type="text"
             id="lastName"
             name="last_name"
+            className="home_form_input"
+            placeholder="Apellido del contacto"
             value={formData.last_name}
             onChange={handleChange}
+            autoComplete="family-name"
             required
           />
         </div>
-        <div className="input-group">
-          <label htmlFor="email">Correo electrónico:</label>
+
+        <div className="home_form_group">
+          <label htmlFor="email" className="home_form_label">Correo electrónico</label>
           <input
             type="email"
             id="email"
             name="email"
+            className="home_form_input"
+            placeholder="correo@ejemplo.com"
             value={formData.email}
             onChange={handleChange}
+            autoComplete="email"
             required
           />
         </div>
-        <div className="input-group">
+
+        <div className="contact_form_favorite">
           <input
             type="checkbox"
             id="likeFavorite"
@@ -75,11 +92,12 @@ export function Form({ toggleForm }) {
             checked={formData.isFavorite}
             onChange={handleChange}
           />
-          <label htmlFor="likeFavorite">Activar mi favorito</label>
+          <label htmlFor="likeFavorite">Marcar como favorito</label>
         </div>
-        <div className="input-group">
-          <input type="submit" value="Guardar Contacto" />
-        </div>
+
+        <button type="submit" className="home_form_submit">
+          <span className="home_form_submit_label">Guardar contacto</span>
+        </button>
       </div>
     </form>
   );

@@ -1,72 +1,66 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../App.css";
-import React, { useState } from "react";
+import GlobantLogo from "../img/GlobantLogo.webp";
+import GlobantLogoButton from "../img/GlobantLogoButton.png"
+import { useState } from "react";
 import { Form } from "./Form";
 
-/**
- * Componente `Nav`
- * 
- * Este componente representa la barra de navegación principal de la aplicación.
- * 
- * Funcionalidad:
- * - Navegación entre las secciones principales: OverView, Contacts y Favorites.
- * - Botón para abrir el formulario de creación de contactos.
- */
+const navLinks = [
+  {
+    to: "",
+    label: "OverView",
+    className: "nav-btnOverview",
+  },
+  {
+    to: "contacts",
+    label: "Contacts",
+    className: "nav-btnContacts",
+  },
+  {
+    to: "favorites",
+    label: "Favorites",
+    className: "nav-btnFavorite",
+  },
+];
+
 export function Nav() {
   const [isFormVisible, setIsFormVisible] = useState(false);
-
-  /**
-   * Alterna la visibilidad del formulario.
-   */
-  const toggleForm = () => {
-    setIsFormVisible((prev) => !prev);
-  };
+  const toggleForm = () => setIsFormVisible((prev) => !prev);
 
   return (
     <>
       <nav>
+        <img src={GlobantLogo} alt="Logo Globant" className="nav-logo" />
         <ul className="nav-botonesNavbar">
           {/* Enlace a la vista general */}
-          <li>
-            <Link
-              to={""}
-              className="nav-btnOverview"
-              aria-label="Ir a la vista general"
-            >
-              OverView
-            </Link>
-          </li>
-
-          {/* Enlace a la lista de contactos */}
-          <li>
-            <Link
-              to={"Contacts"}
-              className="nav-btnContacts"
-              aria-label="Ir a la lista de contactos"
-            >
-              Contacts
-            </Link>
-          </li>
-
-          {/* Enlace a la lista de favoritos */}
-          <li>
-            <Link
-              to={"Favorites"}
-              className="nav-btnFavorite"
-              aria-label="Ir a la lista de favoritos"
-            >
-              Favorites
-            </Link>
-          </li>
-
-          {/* Botón para abrir el formulario */}
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <NavLink
+                to={link.to}
+                end={link.to === ""}
+                className={({ isActive }) =>
+                  `${link.className}${isActive ? " active" : ""}`
+                }
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
           <li>
             <button
               className="nav-btnNew"
               onClick={toggleForm}
               aria-label="Abrir formulario para nuevo contacto"
             >
-              + NEW
+              <span className="nav-btnNew-label">
+                <img
+                  src={GlobantLogoButton}
+                  alt=""
+                  className="nav-btnNew-icon"
+                  aria-hidden="true"
+                />
+                Crear Nuevo Contacto
+              </span>
             </button>
           </li>
         </ul>
