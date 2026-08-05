@@ -273,6 +273,34 @@ body {
   margin: 0;
 }
 
+.loading_screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--login-white);
+}
+
+.loading_screen_gif {
+  width: min(240px, 70vw);
+  height: auto;
+}
+
+.loading_screen_text {
+  color: var(--login-text-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.home_form_submit:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
 /* Nav */
 nav {
   box-sizing: border-box;

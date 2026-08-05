@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import LoginGlobantIMG from "../img/upscalemedia-transformed.jpeg";
+import { LoadingScreen } from "./LoadingScreen";
 
 function Home() {
   const [usuario, setUsuario] = useState("");
@@ -12,6 +13,7 @@ function Home() {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -25,7 +27,11 @@ function Home() {
     }
 
     setError(false);
-    navigate("/home");
+    setIsLoading(true);
+
+    window.setTimeout(() => {
+      navigate("/home", { state: { skipLoader: true } });
+    }, 1000);
   };
 
   function handleInputChange(setter) {
@@ -40,6 +46,7 @@ function Home() {
 
   return (
     <div className="home_login_page">
+      {isLoading && <LoadingScreen />}
       <div className="home_login_layout">
         <section className="home_login_form_panel">
           <form
@@ -100,7 +107,7 @@ function Home() {
                 </p>
               )}
 
-              <button type="submit" className="home_form_submit">
+              <button type="submit" className="home_form_submit" disabled={isLoading}>
                 <span className="home_form_submit_label">Entrar</span>
               </button>
             </div>

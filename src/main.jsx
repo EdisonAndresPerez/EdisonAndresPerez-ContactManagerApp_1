@@ -11,12 +11,11 @@ import { Provider } from "react-redux";
 import Home from "./componentes/Home.jsx";
 
 function Root() {
-  const [user, setUser] = useState(null); // Estado global para el usuario
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home setUser={setUser} />, // Pasa setUser como prop
+      element: <Home />, // Pasa setUser como prop
     },
     {
       path: "/home",

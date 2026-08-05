@@ -44,6 +44,7 @@ export function Cards({ user }) {
             className="card-iconoCorazon"
             onClick={handleFavorite}
           />
+          
           <FontAwesomeIcon
             icon={faTrash}
             className="card-iconoEliminar"
